@@ -96,6 +96,11 @@ def read_arxiv(print_url=False):
   items.pop(0)
   
   # extract the useful info from the listings
-  papers = [article(i) for i in items]
+  papers = []
+  for i in items:
+      try:
+          papers.append(article(i))
+      except IndexError:
+          pass
   # return a list of the most recent articles
   return papers
