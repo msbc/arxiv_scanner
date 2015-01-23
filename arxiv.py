@@ -85,7 +85,7 @@ def read_arxiv(print_url=False):
   # insert all the items in "search" list
   url += '+'.join(search)
   # add proper url suffix
-  url += '/0/1/0/all/0/1'
+  url += '/0/1/0/past/0/1'
   if print_url : print url
 
   # read date on the web page specified by the url
