@@ -1,14 +1,14 @@
 #! /usr/bin/python
 
 # This code scans the ArXiv for the 25 most recent post with authors from UCSB.
-# read_arxiv() returns the 25 most recent posts. 
+# read_arxiv() returns the 25 most recent posts.
 # See comments below for how the output is formated
 
 import urllib2
 
 faculty = ['Blaes_O', 'Bildsten_L', 'Peng_O', 'Martin_C', 'Antonucci_R',
            'Lubin_P', 'Gwinn_C', 'Howell_D', 'Mazin_B', 'Monreal_B', 'Peale_S',
-           ]
+           'Murray_Clay_R']
 inst = ['UCSB', 'EXACT+UC_Santa_Barbara']
 urlbase = 'http://arxiv.org'
 
@@ -18,9 +18,9 @@ urlbase = 'http://arxiv.org'
 #                    This list preserves the order found on the ArXiv.)
 #   article.url (a string which is the url to the ArXiv entry for the article)
 #   article.pdfurl (a sting which contains the url of the pdf for the article)
-#   article.comments (a string containing the comment that the authors 
+#   article.comments (a string containing the comment that the authors
 #                     included when submitting the paper)
-#   article.subjects (a sting which list the subjects of the paper, 
+#   article.subjects (a sting which list the subjects of the paper,
 #                     e.g. "Astrophysics of Galaxies (astro-ph.GA)")
 class article:
   def __init__(self, listing):
@@ -62,9 +62,9 @@ def read_arxiv(print_url=False):
                      This list preserves the order found on the ArXiv.)
     article.url (a string which is the url to the ArXiv entry for the article)
     article.pdfurl (a sting which contains the url of the pdf for the article)
-    article.comments (a string containing the comment that the authors 
+    article.comments (a string containing the comment that the authors
                       included when submitting the paper)
-    article.subjects (a sting which list the subjects of the paper, 
+    article.subjects (a sting which list the subjects of the paper,
                       e.g. "Astrophysics of Galaxies (astro-ph.GA)")
 
   """
@@ -77,7 +77,7 @@ def read_arxiv(print_url=False):
   # add searches for different versions of the institution name
   for i in inst :
     search.append('all:+'+i)
-  
+
   # start with the proper beginning for the url
   url = urlbase + '/find/astro-ph/1/'
   # use ORs so that any single match is accepted
@@ -87,14 +87,14 @@ def read_arxiv(print_url=False):
   # add proper url suffix
   url += '/0/1/0/all/0/1'
   if print_url : print url
-  
+
   # read date on the web page specified by the url
   data = urllib2.urlopen(url).read()
   # the string '<dt>' seams to separate all the listings
   items = data.split('<dt>')
   # remove the stuff before the first listing
   items.pop(0)
-  
+
   # extract the useful info from the listings
   papers = []
   for i in items:
