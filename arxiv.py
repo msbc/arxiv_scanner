@@ -53,7 +53,7 @@ class article:
 def read_arxiv(print_url=False):
   """Scans the ArXiv and returns a list containing the 25 most recent submissions from UCSB.
 
-  The keyword "print_url" tels the function weather to print the url which is used to scan the ArXiv.
+  The keyword "print_url" tells the function weather to print the url which is used to scan the ArXiv.
 
   Each member of the output list is an object with the following attributes:
 
