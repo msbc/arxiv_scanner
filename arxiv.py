@@ -7,8 +7,8 @@
 import urllib2
 
 faculty = ['Blaes_O', 'Bildsten_L', 'Peng_O', 'Martin_C', 'Antonucci_R',
-           'Lubin_P', 'Gwinn_C', 'Howell_D', 'Mazin_B', 'Monreal_B', 'Peale_S',
-           'Murray_Clay_R']
+           'Lubin_P', 'Gwinn_C', 'Howell_D', 'Mazin_B', 'Brandt_T', 
+           'Hennawi_J']
 inst = ['UCSB', 'EXACT+UC_Santa_Barbara']
 urlbase = 'http://arxiv.org'
 
